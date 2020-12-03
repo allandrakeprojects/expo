@@ -10173,7 +10173,7 @@ CACHE_KEYS:
       UMCore:
         :debug: b133cf6df6dbaf6259afd89694631b68
         :release: b133cf6df6dbaf6259afd89694631b68
-    CHECKSUM: 73966cbc64e999a6f6086b82f19ee905ec3684c4
+    CHECKSUM: f4b78eda2c40a84f5141cb8665fc6ace9c753b99
     FILES:
       - "../../packages/@unimodules/core/ios/UMCore/Protocols/UMAppLifecycleListener.h"
       - "../../packages/@unimodules/core/ios/UMCore/Protocols/UMAppLifecycleService.h"
@@ -10208,7 +10208,7 @@ CACHE_KEYS:
       - "../../packages/@unimodules/core/ios/UMCore/UMViewManager.m"
     PROJECT_NAME: UMCore
     SPECS:
-      - UMCore (6.0.0)
+      - UMCore (6.0.1-prebuild.0)
   UMFaceDetectorInterface:
     BUILD_SETTINGS_CHECKSUM:
       UMFaceDetectorInterface:
@@ -10277,7 +10277,7 @@ CACHE_KEYS:
       UMReactNativeAdapter:
         :debug: d5b46c1a381c1d32510911a8f822612a
         :release: d5b46c1a381c1d32510911a8f822612a
-    CHECKSUM: debfc0d03367149f3b33a4add9e0aa01a349224a
+    CHECKSUM: fe7881d9d4dba008dd851e80f9ecea984927c026
     FILES:
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/Services/UMReactFontManager.h"
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/Services/UMReactFontManager.m"
@@ -10300,7 +10300,7 @@ CACHE_KEYS:
       - "../../packages/@unimodules/react-native-adapter/ios/UMReactNativeAdapter/UMViewManagerAdapter/UMViewManagerAdapter.m"
     PROJECT_NAME: UMReactNativeAdapter
     SPECS:
-      - UMReactNativeAdapter (5.7.0)
+      - UMReactNativeAdapter (5.8.1-prebuild.0)
   UMSensorsInterface:
     BUILD_SETTINGS_CHECKSUM:
       UMSensorsInterface:
