@@ -37,8 +37,9 @@
   "dependencies": {
     "uuid": "^3.3.2"
   },
-  "unimodulePeerDependencies": {
-    "@unimodules/core": "*"
+  "peerDependencies": {
+    "@unimodules/core": "*",
+    "unimodules-file-system-interface": "*"
   },
   "devDependencies": {
     "expo-module-scripts": "~1.2.0"

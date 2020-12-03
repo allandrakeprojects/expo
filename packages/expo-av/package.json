@@ -36,7 +36,8 @@
     "expo-asset": "*",
     "react": "*",
     "react-native": "*",
-    "unimodules-permissions-interface": "*"
+    "unimodules-permissions-interface": "*",
+    "unimodules-file-system-interface": "*"
   },
   "devDependencies": {
     "expo-module-scripts": "~1.2.0"

@@ -33,7 +33,7 @@
   "jest": {
     "preset": "expo-module-scripts"
   },
-  "unimodulePeerDependencies": {
+  "peerDependencies": {
     "@unimodules/core": "*",
     "expo-constants": "*",
     "expo-file-system": "*"

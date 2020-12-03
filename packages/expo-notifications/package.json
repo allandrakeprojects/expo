@@ -36,10 +36,8 @@
   "jest": {
     "preset": "expo-module-scripts/ios"
   },
-  "unimodulePeerDependencies": {
+  "peerDependencies": {
     "@unimodules/core": "*",
-    "expo-application": "^2.1.0",
-    "expo-constants": "<10.0.0",
     "unimodules-permissions-interface": "*"
   },
   "dependencies": {

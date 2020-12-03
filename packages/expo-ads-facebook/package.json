@@ -34,10 +34,8 @@
     "fbemitter": "^2.1.1",
     "nullthrows": "^1.1.0"
   },
-  "unimodulePeerDependencies": {
-    "@unimodules/core": "*"
-  },
   "peerDependencies": {
+    "@unimodules/core": "*",
     "react": "*",
     "react-native": "*"
   },

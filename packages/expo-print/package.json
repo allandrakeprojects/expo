@@ -36,7 +36,8 @@
   "peerDependencies": {
     "@unimodules/core": "*",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "unimodules-file-system-interface": "*"
   },
   "devDependencies": {
     "expo-module-scripts": "~1.2.0"

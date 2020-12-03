@@ -35,9 +35,10 @@
   "dependencies": {
     "unimodules-app-loader": "~1.4.0"
   },
-  "unimodulePeerDependencies": {
+  "peerDependencies": {
     "@unimodules/core": "*",
     "unimodules-app-loader": "*",
+    "unimodules-constants-interface": "*",
     "unimodules-task-manager-interface": "*"
   },
   "devDependencies": {

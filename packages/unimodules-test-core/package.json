@@ -18,5 +18,8 @@
   },
   "author": "650 Industries, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/expo/expo/tree/master/packages/unimodules-test-core"
+  "homepage": "https://github.com/expo/expo/tree/master/packages/unimodules-test-core",
+  "peerDependencies": {
+    "@unimodules/core": "*"
+  }
 }

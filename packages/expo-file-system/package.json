@@ -34,12 +34,11 @@
   "jest": {
     "preset": "expo-module-scripts"
   },
-  "unimodulePeerDependencies": {
-    "@unimodules/core": "*"
-  },
   "peerDependencies": {
+    "@unimodules/core": "*",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "unimodules-file-system-interface": "*"
   },
   "dependencies": {
     "uuid": "^3.4.0"

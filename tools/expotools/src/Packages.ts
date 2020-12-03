@@ -6,6 +6,7 @@ import IosUnversionablePackages from './versioning/ios/unversionablePackages.jso
 import AndroidUnversionablePackages from './versioning/android/unversionablePackages.json';
 import * as Directories from './Directories';
 import * as Npm from './Npm';
+import { filterAsync, spawnJSONCommandAsync } from './Utils';
 
 const ANDROID_DIR = Directories.getAndroidDir();
 const IOS_DIR = Directories.getIosDir();
@@ -56,6 +57,19 @@ export type UnimoduleJson = {
   };
 };
 
+export type Podspec = {
+  name: string;
+  version: string;
+  platforms: Record<string, string>;
+  source_files: string | string[];
+  exclude_files: string | string[];
+  compiler_flags: string;
+  frameworks: string | string[];
+  pod_target_xcconfig: Record<string, string>;
+  dependencies: Record<string, any>;
+  info_plist: Record<string, string>;
+};
+
 /**
  * Represents a package in the monorepo.
  */
@@ -99,7 +113,7 @@ export class Package {
     }
 
     // Obtain podspecName by looking for podspecs
-    const podspecPaths = glob.sync('**/*.podspec', {
+    const podspecPaths = glob.sync('*.podspec', {
       cwd: path.join(this.path, iosConfig.subdirectory),
     });
 
@@ -218,6 +232,13 @@ export class Package {
     return ([] as PackageDependency[]).concat(...dependencies);
   }
 
+  async getLocalDependenciesAsync(): Promise<Package[]> {
+    const localDependencies = await filterAsync(this.getDependencies(true), async (dependency) => {
+      return await fs.pathExists(pathToLocalPackageJson(dependency.name));
+    });
+    return localDependencies.map((localDependency) => getPackageByName(localDependency.name)!);
+  }
+
   dependsOn(packageName: string): boolean {
     return this.getDependencies().some((dep) => dep.name === packageName);
   }
@@ -282,6 +303,33 @@ export class Package {
     }
     return false;
   }
+
+  /**
+   * Reads the podspec and returns it in JSON format
+   * or `null` if the package doesn't have a podspec.
+   */
+  async getPodspecAsync(): Promise<Podspec | null> {
+    const podspecName = this.podspecName;
+    const podspecPath = path.join(this.path, this.iosSubdirectory, `${podspecName}.podspec`);
+
+    if (!podspecName) {
+      return null;
+    }
+    return await spawnJSONCommandAsync('pod', ['ipc', 'spec', podspecPath]);
+  }
+}
+
+/**
+ * Resolves to a Package instance if the package with given name exists in the repository.
+ */
+export function getPackageByName(packageName: string): Package | null {
+  const packageJsonPath = pathToLocalPackageJson(packageName);
+  try {
+    const packageJson = require(packageJsonPath);
+    return new Package(path.dirname(packageJsonPath), packageJson);
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -311,4 +359,8 @@ function readUnimoduleJsonAtDirectory(dir: string) {
   } catch (error) {
     return null;
   }
+}
+
+function pathToLocalPackageJson(packageName: string): string {
+  return path.join(PACKAGES_DIR, packageName, 'package.json');
 }

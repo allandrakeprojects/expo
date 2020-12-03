@@ -30,7 +30,8 @@
   "license": "MIT",
   "homepage": "https://docs.expo.io/versions/latest/sdk/video-thumbnails/",
   "peerDependencies": {
-    "@unimodules/core": "*"
+    "@unimodules/core": "*",
+    "unimodules-file-system-interface": "*"
   },
   "devDependencies": {
     "expo-module-scripts": "~1.2.0"

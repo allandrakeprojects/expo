@@ -30,5 +30,8 @@
   "homepage": "https://github.com/expo/expo/tree/master/packages/unimodules-permissions-interface",
   "devDependencies": {
     "expo-module-scripts": "~1.2.0"
+  },
+  "peerDependencies": {
+    "@unimodules/core": "*"
   }
 }

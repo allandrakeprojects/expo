@@ -40,12 +40,10 @@
   "jest": {
     "preset": "expo-module-scripts/ios"
   },
-  "unimodulePeerDependencies": {
-    "@unimodules/core": "*",
-    "expo-constants": "*"
-  },
   "peerDependencies": {
-    "react-native": "*"
+    "@unimodules/core": "*",
+    "react-native": "*",
+    "expo-constants": "*"
   },
   "dependencies": {
     "invariant": "^2.2.4"

@@ -8,6 +8,7 @@ def use_unimodules!(custom_options = {})
     target: 'react-native',
     exclude: [],
     flags: {},
+    use_sources: false,
   }.deep_merge(custom_options)
 
   modules_paths = options.fetch(:modules_paths)
@@ -73,6 +74,14 @@ def use_unimodules!(custom_options = {})
       pod_options = flags.merge({ path: podspec_directory.to_s })
 
       pod "#{pod_name}", pod_options
+
+      # If `use_sources` is set to true, check if there is `Sources` subspec and if so, include it.
+      if options.fetch(:use_sources)
+        spec = Pod::Specification.from_file("#{podspec_directory}/#{pod_name}.podspec")
+        if spec.subspecs.any? { |subspec| subspec.name == "#{pod_name}/Sources" }
+          pod "#{pod_name}/Sources", pod_options
+        end
+      end
     }
 
     if unimodules_duplicates.length > 0

@@ -31,10 +31,8 @@
   "author": "650 Industries, Inc.",
   "license": "MIT",
   "homepage": "https://docs.expo.io/versions/latest/sdk/keep-awake/",
-  "unimodulePeerDependencies": {
-    "@unimodules/core": "*"
-  },
   "peerDependencies": {
+    "@unimodules/core": "*",
     "react": "*",
     "react-native": "*"
   },

@@ -39,6 +39,7 @@
     "react": "*",
     "react-native": "*",
     "unimodules-barcode-scanner-interface": "*",
+    "unimodules-image-loader-interface": "*",
     "unimodules-permissions-interface": "*"
   },
   "dependencies": {

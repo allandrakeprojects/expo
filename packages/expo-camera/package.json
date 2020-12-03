@@ -41,6 +41,7 @@
     "unimodules-camera-interface": "*",
     "unimodules-face-detector-interface": "*",
     "unimodules-file-system-interface": "*",
+    "unimodules-image-loader-interface": "*",
     "unimodules-permissions-interface": "*"
   },
   "dependencies": {

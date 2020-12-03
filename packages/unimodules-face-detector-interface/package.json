@@ -19,5 +19,8 @@
   },
   "author": "650 Industries, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/expo/expo/tree/master/packages/unimodules-face-detector-interface"
+  "homepage": "https://github.com/expo/expo/tree/master/packages/unimodules-face-detector-interface",
+  "peerDependencies": {
+    "@unimodules/core": "*"
+  }
 }

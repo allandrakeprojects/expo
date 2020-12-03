@@ -35,12 +35,11 @@
   "jest": {
     "preset": "expo-module-scripts/ios"
   },
-  "unimodulePeerDependencies": {
-    "@unimodules/core": "*"
-  },
   "peerDependencies": {
+    "@unimodules/core": "*",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "unimodules-file-system-interface": "*"
   },
   "dependencies": {
     "@expo/websql": "^1.0.1",
